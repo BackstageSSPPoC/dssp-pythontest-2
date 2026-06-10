@@ -56,7 +56,7 @@ spec:
     spec:
       containers:
         - name: ${APP_NAME}
-          image: ${DOCKER_IMAGE}
+          image: ${DOCKER_I}
           ports:
             - containerPort: ${APP_PORT}
           env:
