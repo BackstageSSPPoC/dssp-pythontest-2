@@ -4,6 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
+    assert 1 == 2 
     return """
     <html>
         <head>
