@@ -1,2 +1,2 @@
-flask==99.99
+flask==2.2.2
 gunicorn==22.0.0
