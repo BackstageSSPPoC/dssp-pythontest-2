@@ -1,0 +1,45 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+
+metadata:
+  name:  dssp-pythontest-2
+  description: Service  dssp-pythontest-2
+
+  annotations:
+    github.com/project-slug: BackstageSSPPoC/ dssp-pythontest-2
+    backstage.io/techdocs-ref: dir:.
+    jenkins.io/job-full-name: Backstage_SSP_PoC/dssp-pythontest-2/main
+    argocd/app-name:  dssp-pythontest-2-dev
+    backstage.io/kubernetes-id:  dssp-pythontest-2
+    sonarqube.org/project-key:  dssp-pythontest-2
+    # prometheus.io/rule: "kube_pod_container_resource_requests{pod=~' dssp-pythontest-2.*'}|resource,kube_pod_container_status_running{pod=~' dssp-pythontest-2.*'}|container"
+    # prometheus.io/alert: "all"
+    # prometheus.io/labels: "namespace=dev"
+    prometheus.io/rule: "kube_pod_container_resource_requests{pod=~'dssp-pythontest-2.*'}|resource,kube_pod_container_status_restarts_total{pod=~'dssp-pythontest-2.*'}|container"
+    prometheus.io/alert: "KubePodCrashLooping,KubeDeploymentReplicasMismatch,KubePodNotReady,KubeContainerWaiting,KubeContainerOOMKilled,KubeDeploymentRolloutStuck"
+    prometheus.io/labels: "namespace=dev"
+
+spec:
+  type: service
+  owner: development
+  lifecycle: experimental
+
+# apiVersion: backstage.io/v1alpha1
+# kind: Component
+
+# metadata:
+#   name:  dssp-pythontest-2
+#   description: Service  dssp-pythontest-2
+
+#   annotations:
+#     github.com/project-slug: BackstageSSPPoC/ dssp-pythontest-2
+#     backstage.io/techdocs-ref: dir:.
+#     jenkins.io/job-full-name: Backstage_SSP_PoC/dssp-pythontest-2/main
+#     argocd/app-name:  dssp-pythontest-2
+#     backstage.io/kubernetes-id:  dssp-pythontest-2
+#     sonarqube.org/project-key:  dssp-pythontest-2
+
+# spec:
+#   type: service
+#   owner: development
+#   lifecycle: experimental
